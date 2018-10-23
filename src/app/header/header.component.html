@@ -1,0 +1,31 @@
+<div fxLayput="row" style="background-color:bisque">
+  <div fxLayout="column" fxFlex="100">
+    <div fxLayout fxLayoutAlign="center" fxFlex="70px">
+      <div fxLayout fxFlex="85">
+        <div fxFlex="50">
+         <h1> <p>Bloguru</p></h1>
+        </div>
+        <div fxLayout fxLayoutAlign="end center" fxLayoutGap="13px" fxFlex="50" *ngIf="show">
+          <div>
+            <a routerLink="/"> <button mat-stroked-button>Home</button></a>
+          </div>
+          <div *ngIf="!isAuthenticated">
+            <a routerLink="/register"> <button mat-stroked-button>Sign Up!</button></a>
+          </div>
+          <div *ngIf="!isAuthenticated">
+            <a routerLink="/login"> <button mat-stroked-button>Sign In!</button></a>
+          </div>
+          <div *ngIf="isAuthenticated">
+              <a routerLink="/editor"> <button mat-stroked-button>New Article</button></a>
+            </div>
+          <div *ngIf="isAuthenticated">
+            <a routerLink="/login"> <button mat-stroked-button>{{currentUser.username}}</button></a>
+          </div>
+          <div *ngIf="isAuthenticated">
+            <button mat-stroked-button (click)="logout()">Logout!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

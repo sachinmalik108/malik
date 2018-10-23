@@ -1,0 +1,29 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="signin">
+  <p style="font-size: 45px"><strong> Sign Up </strong></p>
+  <a fxFlexOffset="8px" routerLink="/login">Have an account?</a>
+  <div fxFlexOffset="20px" fxLayout fxLayoutAlign="center center">
+    <form fxFlex="400px" fxLayout="column" class="example-form" (ngSubmit)="OnSignUp(f)" #f="ngForm">
+      <ul class="errormessage" *ngIf="errors">
+        <li *ngFor="let error of errors">
+          {{ error }}
+        </li>
+      </ul>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" ngModel name="username" required #username="ngModel">
+      </mat-form-field>
+      <!-- <span class="errormessage" *ngIf="username.value!=null && username.value.trim()=='' && username.touched">Username can't be blank</span > -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" ngModel name="email" required email #email="ngModel">
+      </mat-form-field>
+      <!-- <span class="errormessage" *ngIf="!email.valid && email.touched">Please enter a valid email!</span > -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" ngModel name="password" type="password" required #password="ngModel">
+      </mat-form-field>
+      <!-- <span class="errormessage" *ngIf="password.value!=null && password.value.length < 8 && password.touched">Password can't be blank and minimum of 8 character</span > -->
+      <div class="submit" fxLayout fxLayoutAlign="end">
+        <!-- <button type="submit">Sign In</button> -->
+        <button type="submit" [disabled]="!f.valid">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>

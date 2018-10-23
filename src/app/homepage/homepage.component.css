@@ -1,0 +1,72 @@
+img{    
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 30px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+.authorname{
+    display: block;
+    font-weight: 500 !important;
+    touch-action: manipulation;
+    color: rgb(212, 44, 67);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.authorname :hover{
+    text-decoration: underline !important;
+}
+.createdat{
+    
+    line-height: 1rem;
+    font-weight: 300;
+    color: rgb(187, 187, 187);
+    font-size: 0.8rem;
+    display: block;
+    box-sizing: inherit;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a :hover{
+    text-decoration: underline;
+}
+
+.articletitle{
+    margin:0px !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    text-decoration: none !important;
+    line-height: 1.1;
+    color: black;
+    display: block;
+}
+
+.articledescription{    
+    font-weight: 300;
+    color: rgb(153, 153, 153);
+    text-decoration: none !important;
+    margin: 7px 0 15px 0 !important;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+.Readmore{
+    font-size: 0.8rem;
+    text-decoration: none !important;
+    font-weight: 300;
+    color: rgb(187, 187, 187);
+    vertical-align: middle;
+}
+
+.articlebottomline{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

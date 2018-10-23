@@ -1,0 +1,85 @@
+<div fxLayout fxLayoutAlign="center start">
+  <div fxFlex="85" fxLayout fxLayoutALign="start start">
+    <div fxFlex="75">
+      <mat-tab-group>
+        <mat-tab label="Your Feed" *ngIf="isAuthenticated">
+          <div fxLayout="column">
+            <div fxFlexOffset="15px" *ngIf="loading">
+              Loading articles...
+            </div>
+            <div fxLayout="column" *ngFor="let article of feeds">
+              <div fxLayout fxFlexOffset="15px">
+                <div fxLayout fxFlex="80" fxLayoutGap="8px">
+                  <div fxLayout>
+                    <img class="authorimage" [src]="article.author.image" alt="">
+                  </div>
+                  <div fxLayout="column">
+
+                    <a routerLink="/" class="authorname">
+                      {{ article.author.username }}
+                    </a>
+                    <span class="createdat">
+                      {{ article.createdAt | date: 'longDate' }}
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+              <div fxLayout fxFlexOffset="10px">
+                <a (click)="fetchArticle(article.slug)" fxLayout="column" >
+                  <h2 fxFlex="20px" class="articletitle">{{article.title}}</h2>
+                  <p class="articledescription">{{article.description}}</p>
+                  <span class="Readmore">Read more...</span>
+                </a>
+              </div>
+              <div fxFlex="20px" class="articlebottomline">
+
+              </div>
+            </div>
+            <div fxFlex="100px"> </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Global Feed">
+          <div fxLayout="column">
+            <div fxFlexOffset="15px" *ngIf="loading">
+              Loading articles...
+            </div>
+            <div fxLayout="column" *ngFor="let article of articles">
+              <div fxLayout fxFlexOffset="15px">
+                <div fxLayout fxFlex="80" fxLayoutGap="8px">
+                  <div fxLayout>
+                    <img class="authorimage" [src]="article.author.image" alt="">
+                  </div>
+                  <div fxLayout="column">
+
+                    <a routerLink="/" class="authorname">
+                      {{ article.author.username }}
+                    </a>
+                    <span class="createdat">
+                      {{ article.createdAt | date: 'longDate' }}
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+              <div fxLayout fxFlexOffset="10px">
+                <a (click)="fetchArticle(article.slug)" fxLayout="column" >
+                  <h2 fxFlex="20px" class="articletitle">{{article.title}}</h2>
+                  <p class="articledescription">{{article.description}}</p>
+                  <span class="Readmore">Read more...</span>
+                </a>
+              </div>
+              <div fxFlex="20px" class="articlebottomline">
+
+              </div>
+            </div>
+            <div fxFlex="100px"> </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>

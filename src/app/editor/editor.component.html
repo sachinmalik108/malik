@@ -1,0 +1,31 @@
+<div fxLayout fxLayoutAlign="center center">
+  <form fxFlex="60" fxLayout="column" fxLayoutAlign="start stretch" (ngSubmit)="createArticle(f)" #f="ngForm">
+    <div fxFlex="20px">
+
+    </div>
+    <ul class="errormessage" *ngIf="errors">
+      <li *ngFor="let error of errors">
+        {{ error }}
+      </li>
+    </ul>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Article title" [(ngModel)]="title" type="text" name="title" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="What's this article about?" [(ngModel)]="description" type="text" name="description" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Write your article(in markdown)" [(ngModel)]="body"  name="body" id="" cols="30" rows="10" required></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter tags" ngModel type="text" name="tags">
+    </mat-form-field>
+    <div class="submit" fxLayout fxLayoutAlign="end">
+      <button type="submit" [disabled]="!f.valid">Publish Article</button>
+    </div>
+
+    <div fxFlex="100px">
+
+    </div>
+  </form>
+</div>
